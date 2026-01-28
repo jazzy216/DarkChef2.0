@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DarkChef</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>CyberChef Lite</h1>
+    <p>Local transforms + optional AI helper</p>
+  </header>
+
+  <main class="grid">
+    <section>
+      <h2>Input</h2>
+      <textarea id="input" placeholder="Paste text…"></textarea>
+
+      <div class="row">
+        <button data-op="b64enc">Base64 Encode</button>
+        <button data-op="b64dec">Base64 Decode</button>
+        <button data-op="urlenc">URL Encode</button>
+        <button data-op="urldec">URL Decode</button>
+        <button data-op="hexenc">Hex Encode</button>
+        <button data-op="hexdec">Hex Decode</button>
+      </div>
+
+      <div class="row">
+        <button data-op="sha256">SHA-256</button>
+        <button data-op="aesgcm_enc">AES-GCM Encrypt</button>
+        <button data-op="aesgcm_dec">AES-GCM Decrypt</button>
+      </div>
+
+      <details>
+        <summary>Keys / Options</summary>
+        <label>Password (for AES):</label>
+        <input id="password" type="password" placeholder="password" />
+        <small>AES is done locally via WebCrypto.</small>
+      </details>
+
+      <details>
+        <summary>AI Helper (optional)</summary>
+        <button id="aiExplain">Explain what this looks like</button>
+        <button id="aiSuggest">Suggest transform recipe</button>
+        <pre id="aiOut"></pre>
+      </details>
+    </section>
+
+    <section>
+      <h2>Output</h2>
+      <textarea id="output" placeholder="Result…"></textarea>
+      <div class="row">
+        <button id="swap">Swap</button>
+        <button id="copy">Copy Output</button>
+        <button id="clear">Clear</button>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/assets/app.js"></script>
+</body>
+</html>
